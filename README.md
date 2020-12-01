@@ -1,3 +1,39 @@
+
+// Do
+
+composer update
+
+npm install
+
+npm run dev
+
+php artisan migrate
+
+php artisan db:seed 
+
+php artisan serve
+
+manager User Name - manager@gmail.com
+manager password - manager
+
+Normal User Name - user@gmail.com
+Password      -  user
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
 
 <p align="center">
