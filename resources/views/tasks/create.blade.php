@@ -16,7 +16,7 @@
                                 <div class="form-group">
                                     <label for="task_name">Task Name</label>
                                     <input type="text" class="form-control" name="task_name" id="task_name"
-                                           placeholder="task Name" value="">
+                                           placeholder="task Name" value="{{ old('task_name', '') }}">
                                     @if($errors->has('project_name'))
                                     <span class="help-block text-danger" role="alert">{{ $errors->first('task_name') }}</span>
                                     @endif
@@ -26,7 +26,7 @@
                                     <div class="form-group">
                                         <label for="finish_date">Finish Date</label>
                                         <input type="date" class="form-control" name="finish_date" id="finish_date"
-                                               value="">
+                                               value="{{ old('finish_date', '') }}">
                                     </div>
                                 </div>
 

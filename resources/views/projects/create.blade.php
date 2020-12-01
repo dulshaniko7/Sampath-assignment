@@ -16,7 +16,7 @@
                                 <div class="form-group">
                                     <label for="project_name">Project Name</label>
                                     <input type="text" class="form-control" name="project_name" id="project_name"
-                                           placeholder="Project Name" value="">
+                                           placeholder="Project Name" value="{{ old('project_name', '') }}">
                                     @if($errors->has('project_name'))
                                     <span class="help-block text-danger" role="alert">{{ $errors->first('project_name') }}</span>
                                     @endif
@@ -26,7 +26,7 @@
                                 <div class="form-group">
                                     <label for="project_code">Project Code</label>
                                     <input type="text" class="form-control" name="project_code" id="project_code"
-                                           placeholder="Project code" value="">
+                                           placeholder="Project code" value="{{ old('project_code', '') }}">
                                     @if($errors->has('project_code'))
                                     <span class="help-block text-danger" role="alert">{{ $errors->first('project_code') }}</span>
                                     @endif
@@ -38,14 +38,14 @@
                                 <div class="form-group">
                                     <label for="projected_cost">Project Cost</label>
                                     <input type="text" class="form-control" name="projected_cost" id="projected_cost"
-                                           placeholder="Project Cost" value="">
+                                           placeholder="Project Cost" value="{{ old('projected_cost', '') }}">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="finish_date">Finish Date</label>
                                     <input type="date" class="form-control" name="finish_date" id="finish_date"
-                                           value="">
+                                           value="{{ old('finish_date', '') }}">
                                 </div>
                             </div>
 
