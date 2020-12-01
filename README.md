@@ -23,7 +23,16 @@ Password      -  user
 
 
 
+// DB relationships
 
+Project has Many Tasks
+Task belongs to a Project
+
+//Permissions
+
+Only Project Manager can access project CRUD
+
+Task crud can access by both type of users
 
 
 
