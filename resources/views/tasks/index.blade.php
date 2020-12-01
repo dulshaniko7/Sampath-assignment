@@ -11,6 +11,7 @@
             <th scope="col">#</th>
             <th scope="col">Task Name</th>
             <th scope="col">Finish Date</th>
+            <th scope="col">Project Name</th>
             <th scope="col">Action</th>
         </tr>
         </thead>
@@ -20,6 +21,7 @@
             <td>{{$t->id}}</td>
             <td>{{$t->task_name }}</td>
             <td>{{$t->finish_date}}</td>
+            <td>{{$t->project->project_name}}</td>
             <td><a class="btn btn-primary" href="{{ route('tasks.show',$t->id)}}">View</a>
                 <a class="btn btn-success " href="{{ route('tasks.edit',$t->id)}}">Edit</a>
                 <form action="{{ route('tasks.destroy', $t->id) }}" method="POST"
