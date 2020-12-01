@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
 
-    <form class="form-label-left input_mask" method="post" action="{{ route('projects.store')}}">
+    <form class="form-label-left input_mask" method="post" id='formID' action="{{ route('projects.store')}}">
         @csrf
 
         <div class="row">
@@ -56,7 +56,7 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <button type="submit" class="btn btn-success btn-add-row">Save</button>
-                                <button class="btn btn-dark" type="reset">Reset</button>
+                                <button class="btn btn-dark" type="reset" onclick="reset()">Reset</button>
                             </div>
                         </div>
                     </div>
@@ -67,4 +67,9 @@
 
     </form>
 </div>
+<script>
+    function reset() {
+        document.getElementById('formID').reset();
+    }
+</script>
 @endsection

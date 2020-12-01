@@ -3,48 +3,45 @@
 @section('content')
 <div class="container">
 
-    <form class="form-label-left input_mask" id="formId" method="post" action="{{ route('tasks.store')}}">
+    <form class="form-label-left input_mask" method="post"  id='formID' action="{{ route('tasks.update',$task->id)}}">
+        @method('PUT')
         @csrf
 
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title">Add New Task</h4>
+                        <h4 class="card-title">Edit Task</h4>
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="task_name">Task Name</label>
                                     <input type="text" class="form-control" name="task_name" id="task_name"
-                                           placeholder="task Name" value="">
-                                    @if($errors->has('project_name'))
-                                    <span class="help-block text-danger" role="alert">{{ $errors->first('task_name') }}</span>
-                                    @endif
+                                           placeholder="task Name" value="{{ old('task_name', $task->task_name) }}" required>
+
                                 </div>
                             </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="finish_date">Finish Date</label>
-                                        <input type="date" class="form-control" name="finish_date" id="finish_date"
-                                               value="">
-                                    </div>
-                                </div>
-
-
-                        </div>
-                        <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="projected_cost">Project</label>
+                                    <label for="project_id">Project</label>
                                     <select class="form-control " name="project_id" id="project_id" required>
-                                        <option>Select Project</option>
                                         @foreach($projects as $p)
-                                        <option value="{{$p->id}}">{{$p->project_name}}</option>
+                                        <option value="{{$p->id}}" {{ $p->id == $p->id ? 'selected':''}}>{{ $p->project_name }}</option>
                                         @endforeach
                                     </select>
                                 </div>
                             </div>
 
+                        </div>
+                        <div class="row">
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="finish_date">Finish Date</label>
+                                    <input type="date" class="form-control" name="finish_date" id="finish_date"
+                                           value="{{ old('finish_date', $task->finish_date) }}" >
+                                </div>
+                            </div>
 
 
                         </div>
@@ -52,7 +49,7 @@
 
                         <div class="col-md-6">
                             <div class="form-group">
-                                <button type="submit" class="btn btn-success btn-add-row">Save</button>
+                                <button type="submit" class="btn btn-success btn-add-row">Edit</button>
                                 <button class="btn btn-dark" type="reset" onclick="reset()">Reset</button>
                             </div>
                         </div>

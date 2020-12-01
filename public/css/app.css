@@ -10903,3 +10903,22 @@ a.text-dark:focus {
   }
 }
 
+.welcome-text {
+    font-size: 2rem !important;
+    font-weight: 500;
+    border-radius: 4rem;
+    font-family: 'Amiri', serif;
+    border: 3px solid white;
+    animation: moveUp;
+    animation-duration: 3s; }
+
+@keyframes moveUp {
+    0% {
+        opacity: 0;
+        transform: translateY(100px); }
+    80% {
+        opacity: 0.9;
+        transform: translateY(-10px); }
+    100% {
+        opacity: 1;
+        transform: translateY(0); } }

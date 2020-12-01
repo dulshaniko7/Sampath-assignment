@@ -28,11 +28,7 @@ class UpdateProjectRequest extends FormRequest
                 'string',
                 'required',
             ],
-            'project_code' => [
 
-                'required',
-                'unique:projects',
-            ],
             'project_cost' => [
                 'numeric',
 

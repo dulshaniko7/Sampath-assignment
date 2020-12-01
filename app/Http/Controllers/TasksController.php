@@ -6,6 +6,7 @@ use App\Http\Requests\StoreTaskRequest;
 use App\Project;
 use App\Task;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class TasksController extends Controller
 {
@@ -28,6 +29,7 @@ class TasksController extends Controller
     public function create()
     {
         $projects = Project::all();
+
         return view('tasks.create', compact('projects'));
     }
 
@@ -40,6 +42,7 @@ class TasksController extends Controller
     public function store(StoreTaskRequest $request)
     {
         $task = Task::create($request->all());
+        Alert::success('Added', 'Added Successfully');
         return redirect()->route('tasks.index');
     }
 
@@ -63,7 +66,9 @@ class TasksController extends Controller
      */
     public function edit($id)
     {
-        //
+        $task = Task::find($id);
+        $projects = Project::all();
+        return view('tasks.edit', compact('task', 'projects'));
     }
 
     /**
@@ -75,7 +80,10 @@ class TasksController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $task = Task::find($id);
+        $task->update($request->all());
+
+        return redirect()->route('tasks.index');
     }
 
     /**
@@ -86,6 +94,8 @@ class TasksController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $task = Task::find($id);
+        $task->delete();
+        return back();
     }
 }

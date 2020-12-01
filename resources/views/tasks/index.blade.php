@@ -22,7 +22,7 @@
             <td>{{$t->finish_date}}</td>
             <td><a class="btn btn-primary" href="{{ route('tasks.show',$t->id)}}">View</a>
                 <a class="btn btn-success " href="{{ route('tasks.edit',$t->id)}}">Edit</a>
-                <form action="{{ route('projects.destroy', $t->id) }}" method="POST"
+                <form action="{{ route('tasks.destroy', $t->id) }}" method="POST"
                       style="display: inline-block;">
                     <input type="hidden" name="_method" value="DELETE">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
