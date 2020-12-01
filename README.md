@@ -14,9 +14,11 @@ php artisan db:seed
 php artisan serve
 
 manager User Name - manager@gmail.com
+
 manager password - manager
 
 Normal User Name - user@gmail.com
+
 Password      -  user
 
 
