@@ -1,3 +1,50 @@
+
+// Do
+
+composer update
+
+npm install
+
+npm run dev
+
+php artisan migrate
+
+php artisan db:seed 
+
+php artisan serve
+
+manager User Name - manager@gmail.com
+
+manager password - manager
+
+Normal User Name - user@gmail.com
+
+Password      -  user
+
+
+
+// DB relationships
+
+Project has Many Tasks
+Task belongs to a Project
+
+//Permissions
+
+Only Project Manager can access project CRUD
+
+Task crud can access by both type of users
+
+
+
+
+
+
+
+
+
+
+
+
 <p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
 
 <p align="center">
